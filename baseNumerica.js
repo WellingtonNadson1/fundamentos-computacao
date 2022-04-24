@@ -1,19 +1,17 @@
 // Transformation Binary Number for Decimal Number
-function binarytoDecimal(binaryNumber){
 
-    let toStrArray, toNumberArray, regressIndexArray, result
+function binarytoDecimal(...binary){
 
-    toStrArray = binaryNumber.toString().split('')
+    let binaryArray, indexArray, result
+    
+    binaryArray = binary.toString().split('').map(Number).reverse()
 
-    toNumberArray = toStrArray.map(Number).reverse()
+    indexArray = binaryArray.map((_, i) => i)
 
-    regressIndexArray = toNumberArray.map((_, i) => i)
-
-    result = toNumberArray
-    .map((element, regressIndexArray) => element * 2 ** regressIndexArray)
+    result = binaryArray.map((element, indexArray) => element * 2 ** indexArray)
     .reduce((acc, currentValue) => acc + currentValue);
 
     return result
 }
 
-console.log(binarytoDecimal(11001))
+console.log(binarytoDecimal(1110101011))

@@ -8,18 +8,15 @@
 5 => 101 (0101) */
 
 // Transformation Binary Number for Decimal Number
-function binarytoDecimalTs(binaryNumber: number): number{
+function binarytoDecimalTs(...binaryNumber: number[]): number{
 
-    let toStrArray: string[], toNumberArray: number[], regressIndexArray: number[], result: number
+    let binaryArray: number[], indexArray: number[], result: number
 
-    toStrArray = binaryNumber.toString().split('')
+    binaryArray = binaryNumber.toString().split('').map(Number).reverse()
 
-    toNumberArray = toStrArray.map(Number).reverse()
+    indexArray = binaryArray.map((_, i) => i)
 
-    regressIndexArray = toNumberArray.map((_, i) => i)
-
-    result = toNumberArray
-    .map((element, regressIndexArray) => element * 2 ** regressIndexArray)
+    result = binaryArray.map((element, indexArray) => element * 2 ** indexArray)
     .reduce((acc, currentValue) => acc + currentValue);
 
     return result
