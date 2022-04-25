@@ -8,7 +8,7 @@
 5 => 101 (0101) */
 
 // Transformation Binary Number for Decimal Number
-function binarytoDecimalTs(...binaryNumber: number[]): number{
+function binarytoDecimalTs(...binaryNumber: number[]): number {
 
     let binaryArray: number[], indexArray: number[], result: number
 
@@ -17,7 +17,7 @@ function binarytoDecimalTs(...binaryNumber: number[]): number{
     indexArray = binaryArray.map((_, i) => i)
 
     result = binaryArray.map((element, indexArray) => element * 2 ** indexArray)
-    .reduce((acc, currentValue) => acc + currentValue);
+        .reduce((acc, currentValue) => acc + currentValue);
 
     return result
 }

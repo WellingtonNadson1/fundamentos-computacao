@@ -1,20 +1,20 @@
 
 function decimalToBinary(decimal){
     
-    let division = (decimal) => parseInt(decimal / 2)
+    let division = (decimal) => Math.trunc(decimal / 2)
 
     let array = [decimal]
     
-    while (!!division(decimal)) {
+    while (division(decimal)) {
         decimal = division(decimal)
         array.push(decimal)
     }
     
-    let newArray = parseInt(array.map((el) => el % 2 ).reverse().join(''))
+    let newArray = Math.trunc(array.map((el) => el % 2 ).reverse().join(''))
 
     return newArray
 }
 
 
-console.log(decimalToBinary(939))
+console.log(decimalToBinary(41))
 

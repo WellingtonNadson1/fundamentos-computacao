@@ -14,4 +14,4 @@ function binarytoDecimal(...binary){
     return result
 }
 
-console.log(binarytoDecimal(1110101011))
+console.log(binarytoDecimal(101001))
